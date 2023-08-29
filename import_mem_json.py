@@ -16,7 +16,7 @@ SETFILE_COMMAND_AVAILABLE = False
 SYSTEM_DATE_FORMAT = '%m/%d/%Y %H:%M:%S'
 MEM_LINK_PATTERN = r'\(https://mem.ai/m/([A-Za-z0-9]+)\)'
 ATTACHMENT_LINK_PATTERN = r'\!\[\]\((https://storage.googleapis.com/memvp-.*/)([^)]+)\)'
-FILE_EXTENSION_AND_SESSION_PATTERN = r'\.(.+)[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$'
+FILE_EXTENSION_AND_UUID_PATTERN = r'\.(.+)[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}$'
 
 # https://www.anthonysmith.me.uk/2008/01/08/moving-files-to-trash-from-the-mac-command-line/
 def trash_file(file_path):
@@ -96,7 +96,7 @@ with open(MEM_JSON_PATH) as mems:
             url_fname = match.group(2)
             # Attempt to extract an extension from the filename
             local_fname = url_fname
-            m=re.search(FILE_EXTENSION_AND_SESSION_PATTERN,url_fname)
+            m=re.search(FILE_EXTENSION_AND_UUID_PATTERN,url_fname)
             if m!=None:
                 local_fname = url_fname + "." + m.group(1)
             try:
