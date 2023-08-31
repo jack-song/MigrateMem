@@ -86,9 +86,9 @@ with open(MEM_JSON_PATH) as mems:
         # The filename of the attachment should have a suitable extension
         # extracted from the filename.
         # Example:
-        #  Given: ![](https://storage.googleapis.com/memvp-25499.appspot.com/images/16288199829444671600345520058319.jpga68d4074-e9cc-4f90-b03f-17e82fbb905c)
-        #  Save: 16288199829444671600345520058319.jpga68d4074-e9cc-4f90-b03f-17e82fbb905c
-        #  Replace: ![[16288199829444671600345520058319.jpga68d4074-e9cc-4f90-b03f-17e82fbb905c.jpg]]
+        #  Given: ![](https://storage.googleapis.com/memvp-25499.appspot.com/images/16288199829444671600345520664433.jpga58d4012-e9cc-4f90-bbbb-17f92fcc905c)
+        #  Save: 16288199829444671600345520664433.jpga58d4012-e9cc-4f90-bbbb-17f92fcc905c
+        #  Replace: ![[16288199829444671600345520664433.jpga58d4012-e9cc-4f90-bbbb-17f92fcc905c.jpg]]
         #
         for match in re.finditer(ATTACHMENT_LINK_PATTERN, new_note):
             url_full_match = match.group(0)
